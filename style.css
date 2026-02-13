@@ -53,22 +53,29 @@ footer{
 }
 
 #board{
+    box-sizing: content-box;
     display: grid;
     grid-template-columns: 100px 100px 100px;
-    gap: 1em;
 
 }
 
 .cell{
-    border: 2px solid #948979;
-    border-radius: 7px;
     height: 100px;
     width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 75px;
-    box-shadow: -4px -4px 4px 4px hsl(217, 37%, 12%);
+}
+
+.centre-col{
+    border-left: 5px solid #948979;
+    border-right: 5px solid #948979;
+}
+
+.centre-row{
+    border-top: 5px solid #948979;
+    border-bottom: 5px solid #948979;
 }
 
 #turnIndicator{
@@ -78,10 +85,6 @@ footer{
 #stats{
     flex: 1 0 360px;
     min-height: 360px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 small{
