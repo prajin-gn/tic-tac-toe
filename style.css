@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900');
+
 *{
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+h2{
+    font-size: 36px;
+    margin: 0;
+}
+
+p{
+    font-size: 20px;
 }
 
 html{
@@ -35,7 +47,7 @@ footer{
     box-shadow: 0 -4px 6px hsl(217, 37%, 12%);
 }
 
-#gameWindow, #stats{
+#gameWindow, #controls{
     background-color: #393E46;
     border: 2px solid #948979;
     border-radius: 15px;
@@ -66,6 +78,12 @@ footer{
     justify-content: center;
     align-items: center;
     font-size: 75px;
+    color: #dfd0b800;
+    transition: color 0.1s ease-in;
+}
+
+.cell.played {
+  color: #dfd0b8;
 }
 
 .centre-col{
@@ -78,13 +96,63 @@ footer{
     border-bottom: 5px solid #948979;
 }
 
-#turnIndicator{
-    font-size: 32px;
-}
-
-#stats{
+#controls{
     flex: 1 0 360px;
     min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.inp-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+}
+
+.inp-box input{
+    min-height: 35px;
+    border: none;
+    border-radius: 7px;
+    outline: none;
+    background-color: #222831;
+    color: #DFD0B8;
+    padding: 0px 10px;
+    font-size: 18px;
+}
+
+.inp-box input:focus{
+    outline: 3px solid #948979;
+}
+
+#control-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+    width: 60%;
+}
+
+button{
+    font-size: large;
+    border: none;
+    padding: 12px 16px;
+    border: 2px solid #948979;
+    border-radius: 6px;
+    background-color: #222831;
+    color: #DFD0B8;
+    transition: 0.15s;
+}
+
+button:hover{
+    background-color: rgba(34, 40, 49, 0.6);
+}
+
+button:active{
+    background-color: rgb(23, 27, 33);
 }
 
 small{
