@@ -86,6 +86,15 @@ footer{
   color: #dfd0b8;
 }
 
+.cell.preview {
+    color: #dfd0b855;
+}
+
+.cell.preview.fade {
+    color: #dfd0b8;
+}
+
+
 @keyframes blink {
     0%, 100% {color: #dfd0b8;}
     50% {color: #dfd0b800;}

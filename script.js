@@ -10,9 +10,14 @@ let winner = null;
 let filled = 0;
 let gameActive = false;
 
-boardEl.addEventListener("click", startGame);
 
 /* ---------------- Event listeners ---------------- */
+
+boardEl.addEventListener("click", startGame);
+
+boardEl.addEventListener("mouseover", handleHover);
+
+boardEl.addEventListener("mouseout", clearHover);
 
 startEl.addEventListener("click", () => {
     p1 = document.querySelector("#p1").value.trim();
@@ -37,12 +42,13 @@ function startGame(e){
 
     const cell = e.target.closest(".cell");
     if (!cell) return;
-    if (cell.textContent !== "") return;
+    if (board[cell.dataset.i] !== "") return;
 
     play(cell);
 }
 
 function play(cell){
+    cell.classList.remove("preview");
     cell.textContent = turn;
     fade(cell);
 
@@ -146,4 +152,24 @@ function animateWinner(...indices){
     for (let i of indices){
         blink3(document.querySelector(`.cell[data-i="${i}"]`));
     }
+}
+
+function handleHover(e){
+    if (!gameActive) return;
+
+    const cell = e.target.closest(".cell");
+    if (!cell) return;
+    if (cell.textContent !== "") return;
+
+    cell.textContent = turn;
+    cell.classList.add("preview");
+}
+
+function clearHover(e){
+    const cell = e.target.closest(".cell");
+    if (!cell) return;
+    if (!cell.classList.contains("preview")) return;
+
+    cell.textContent = "";
+    cell.classList.remove("preview");
 }
