@@ -51,7 +51,7 @@ footer{
     background-color: #393E46;
     border: 2px solid #948979;
     border-radius: 15px;
-    box-shadow: 4px 4px 4px 4px hsl(217, 37%, 12%);
+    box-shadow: 4px 4px 12px 4px hsl(217, 37%, 12%);
 }
 
 #gameWindow{
@@ -68,7 +68,7 @@ footer{
     box-sizing: content-box;
     display: grid;
     grid-template-columns: 100px 100px 100px;
-
+    cursor: pointer;
 }
 
 .cell{
@@ -82,8 +82,17 @@ footer{
     transition: color 0.1s ease-in;
 }
 
-.cell.played {
+.cell.fade {
   color: #dfd0b8;
+}
+
+@keyframes blink {
+    0%, 100% {color: #dfd0b8;}
+    50% {color: #dfd0b800;}
+}
+
+.cell.blink3 {
+    animation: blink 0.15s ease 2 forwards;
 }
 
 .centre-col{

@@ -13,15 +13,15 @@
         <main>
             <div id="gameWindow">
                 <div id="board">
-                    <div class="cell" id="c1"></div>
-                    <div class="cell centre-col"></div>
-                    <div class="cell"></div>
-                    <div class="cell centre-row"></div>
-                    <div class="cell centre-row centre-col"></div>
-                    <div class="cell centre-row"></div>
-                    <div class="cell"></div>
-                    <div class="cell centre-col"></div>
-                    <div class="cell"></div>
+                    <div class="cell" data-i="0"></div>
+                    <div class="cell centre-col" data-i="1"></div>
+                    <div class="cell" data-i="2"></div>
+                    <div class="cell centre-row" data-i="3"></div>
+                    <div class="cell centre-row centre-col" data-i="4"></div>
+                    <div class="cell centre-row" data-i="5"></div>
+                    <div class="cell" data-i="6"></div>
+                    <div class="cell centre-col" data-i="7"></div>
+                    <div class="cell" data-i="8"></div>
                 </div>
                 <h2 id="turnIndicator">All The Best!</h2>
             </div>
@@ -29,9 +29,9 @@
                 <h2>Game Controls</h2>
                 <div class="inp-box">
                     <p>Player X:</p>
-                    <input type="text" id="p1">
+                    <input type="text" id="p1" placeholder="Enter name">
                     <p>Player 0:</p>
-                    <input type="text" id="p2">
+                    <input type="text" id="p2" placeholder="Enter name">
                 </div>
                 <div id="control-buttons">
                     <button id="start">Start</button>
